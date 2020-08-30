@@ -2,7 +2,9 @@ import pygame
 pygame.init ()
 
 win = pygame.display.set_mode ((1000,700))
-surface=pygame.image.load('images/fondo1.png')
+surface = pygame.image.load('images/fondo1.png')
+surface = pygame.transform.scale(surface,(1000,700))
+
 personaje_1=pygame.image.load('images/personaje1.png')
 personaje_2=pygame.image.load('images/personaje2.png')
 pygame.display.set_caption ("NOT ADVENTURE YET")
@@ -29,6 +31,8 @@ while run:
 
     if keys [pygame.K_LEFT]:
         x -= vel
+        personaje_mov = personaje_2
+
     if keys [pygame.K_RIGHT]:
         x += vel 
         personaje_mov = personaje_1
